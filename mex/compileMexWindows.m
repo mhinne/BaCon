@@ -1,0 +1,6 @@
+lapacklib = fullfile(matlabroot,'extern','lib',computer('arch'),'microsoft',...
+      'libmwlapack.lib');
+blaslib = fullfile(matlabroot,'extern','lib',computer('arch'),'microsoft',...
+  'libmwblas.lib');
+
+mex('-v', '-largeArrayDims', 'struct_conn_density_prior_mex.cpp', blaslib, lapacklib);
